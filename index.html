@@ -1,11 +1,1006 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a3d2e">
+<meta name="description" content="Munnar & Wayanad Wonders – Kerala Road Trip 2026. A premium budget 9-day itinerary for 4 travellers from Hyderabad: transport, bikes, hotels, food, budget & best places.">
+<meta name="keywords" content="Kerala trip, Munnar, Wayanad, budget travel, Kerala road trip 2026, Hyderabad to Kerala, itinerary">
+<meta property="og:title" content="Munnar & Wayanad Wonders – Kerala Road Trip 2026">
+<meta property="og:description" content="Premium budget 9-day Kerala itinerary for 4 from Hyderabad.">
+<title>🌴 Munnar & Wayanad Wonders – Kerala Road Trip 2026</title>
+
+<!-- Fonts + Font Awesome (CDN) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Pacifico&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* ============================================================
+   THEME VARIABLES (Dark default · Light toggle)
+   ============================================================ */
+:root{
+  --bg1:#06241a; --bg2:#0a3d2e; --bg3:#021410;
+  --surface:rgba(255,255,255,.07);
+  --surface-2:rgba(255,255,255,.04);
+  --border:rgba(255,255,255,.16);
+  --text:#eafff5; --muted:#9fd6bf;
+  --neon:#3effb5; --neon2:#00d9ff; --gold:#ffd166; --pink:#ff5d8f;
+  --grad:linear-gradient(135deg,#13d182,#00b8d4);
+  --grad-warm:linear-gradient(135deg,#ffd166,#ff7b54);
+  --shadow:0 20px 50px rgba(0,0,0,.45);
+  --radius:22px;
+}
+[data-theme="light"]{
+  --bg1:#e8fff4; --bg2:#d2f6e6; --bg3:#f3fffb;
+  --surface:rgba(255,255,255,.75);
+  --surface-2:rgba(255,255,255,.55);
+  --border:rgba(7,92,57,.18);
+  --text:#0a2c20; --muted:#3a7a5f;
+  --neon:#06a96a; --neon2:#0094c7; --gold:#c98a00; --pink:#e0457a;
+  --shadow:0 18px 44px rgba(11,90,60,.18);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',system-ui,sans-serif;
+  color:var(--text); overflow-x:hidden;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(0,217,255,.15), transparent 60%),
+    radial-gradient(900px 500px at 0% 20%, rgba(62,255,181,.12), transparent 55%),
+    linear-gradient(180deg,var(--bg1),var(--bg2) 40%,var(--bg3));
+  background-attachment:fixed;
+  transition:background .5s,color .4s;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.brand{font-family:'Outfit','Poppins',sans-serif}
+
+/* ============================================================
+   LOADING ANIMATION
+   ============================================================ */
+#loader{
+  position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:18px;
+  background:linear-gradient(180deg,#021410,#0a3d2e);
+  transition:opacity .8s, visibility .8s;
+}
+#loader.hide{opacity:0;visibility:hidden}
+.loader-ring{
+  width:70px;height:70px;border-radius:50%;
+  border:5px solid rgba(62,255,181,.18);border-top-color:var(--neon);
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-txt{font-family:'Pacifico',cursive;font-size:26px;color:var(--neon);
+  text-shadow:0 0 20px rgba(62,255,181,.6);letter-spacing:1px}
+.loader-sub{color:var(--muted);font-size:13px;letter-spacing:3px;text-transform:uppercase}
+
+/* ============================================================
+   RAIN (monsoon) + FLOATING ICONS
+   ============================================================ */
+#rain{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.drop{position:absolute;top:-12%;width:1.5px;height:70px;
+  background:linear-gradient(transparent,rgba(174,235,255,.55));
+  animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(115vh)}}
+.float-ico{position:fixed;font-size:24px;opacity:.18;z-index:1;pointer-events:none;
+  animation:floaty 9s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-26px) rotate(12deg)}}
+
+/* ============================================================
+   NAVBAR (sticky glass)
+   ============================================================ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;gap:14px;padding:12px 20px;
+  background:var(--surface);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);transition:.4s;
+}
+nav.scrolled{padding:8px 20px;background:rgba(4,20,16,.85)}
+[data-theme="light"] nav.scrolled{background:rgba(255,255,255,.9)}
+.brand{font-weight:900;font-size:18px;background:var(--grad);-webkit-background-clip:text;
+  background-clip:text;color:transparent;white-space:nowrap}
+.brand i{color:var(--gold);-webkit-text-fill-color:var(--gold)}
+.nav-links{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-size:13px;font-weight:600;color:var(--muted);padding:7px 12px;
+  border-radius:999px;white-space:nowrap;transition:.25s}
+.nav-links a:hover,.nav-links a.active{color:#04130d;background:var(--neon);
+  box-shadow:0 0 18px rgba(62,255,181,.5)}
+.theme-btn{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);
+  background:var(--surface);color:var(--gold);font-size:16px;cursor:pointer;transition:.3s}
+.theme-btn:hover{transform:rotate(30deg) scale(1.1)}
+@media(max-width:900px){.nav-links{order:3;width:100%;margin:8px 0 0}}
+
+/* ============================================================
+   SECTIONS / HEADINGS
+   ============================================================ */
+section{position:relative;z-index:2;padding:80px 22px;max-width:1180px;margin:0 auto}
+.tag{display:inline-block;font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--neon2);font-weight:700;margin-bottom:8px}
+.neon{font-size:clamp(26px,6vw,46px);font-weight:900;line-height:1.1;margin-bottom:10px}
+.neon span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 18px rgba(62,255,181,.45))}
+.lead{color:var(--muted);max-width:720px;margin-bottom:34px;font-size:15.5px}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(40px);transition:.8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* glass card */
+.glass{background:var(--surface);backdrop-filter:blur(14px);border:1px solid var(--border);
+  border-radius:var(--radius);box-shadow:var(--shadow)}
+
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:880px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+/* ============================================================
+   HERO + ANIMATED MOUNTAINS + CLOUDS
+   ============================================================ */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:90px 20px 0;overflow:hidden;z-index:2}
+.cloud{position:absolute;background:radial-gradient(circle,rgba(255,255,255,.5),transparent 70%);
+  border-radius:50%;filter:blur(8px);opacity:.5;animation:drift linear infinite}
+@keyframes drift{from{transform:translateX(-30vw)}to{transform:translateX(130vw)}}
+.mountains{position:absolute;left:0;right:0;bottom:0;height:55vh;z-index:-1}
+.mountains svg{width:100%;height:100%}
+.m-back{animation:sway 9s ease-in-out infinite}
+.m-mid{animation:sway 7s ease-in-out infinite reverse}
+@keyframes sway{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.hero-badge{font-size:13px;letter-spacing:2px;color:var(--gold);border:1px solid var(--border);
+  background:var(--surface);padding:8px 18px;border-radius:999px;backdrop-filter:blur(8px);
+  animation:pop 1s .2s both}
+.hero h1{font-size:clamp(38px,10vw,92px);font-weight:900;line-height:.98;margin:18px 0 6px;
+  text-shadow:0 6px 40px rgba(0,0,0,.5);animation:pop 1s .35s both}
+.hero h1 .grad{background:linear-gradient(120deg,#3effb5,#00d9ff,#ffd166);-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.hero .script{font-family:'Pacifico',cursive;font-size:clamp(20px,5vw,34px);color:var(--gold);
+  text-shadow:0 0 28px rgba(255,209,102,.5);animation:pop 1s .5s both}
+.hero p.sub{color:var(--muted);max-width:620px;margin:14px auto 0;font-size:16px;animation:pop 1s .6s both}
+@keyframes pop{from{opacity:0;transform:translateY(26px) scale(.96)}to{opacity:1;transform:none}}
+.hero-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px;animation:pop 1s .75s both}
+.chip{background:var(--surface);border:1px solid var(--border);backdrop-filter:blur(10px);
+  padding:12px 18px;border-radius:16px;min-width:92px}
+.chip b{display:block;font-size:22px;background:var(--grad);-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.chip small{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
+/* countdown */
+.countdown{display:flex;gap:10px;justify-content:center;margin-top:30px;animation:pop 1s .9s both}
+.cd{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:12px 14px;
+  min-width:74px;backdrop-filter:blur(10px)}
+.cd b{display:block;font-size:30px;font-weight:900;color:var(--neon);text-shadow:0 0 16px rgba(62,255,181,.5)}
+.cd small{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.scroll-hint{margin-top:34px;color:var(--muted);font-size:13px;animation:bob 1.6s infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* btn */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;cursor:pointer;
+  padding:13px 26px;border-radius:999px;border:none;color:#04130d;background:var(--grad);
+  box-shadow:0 10px 30px rgba(0,184,212,.4);transition:.3s;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 40px rgba(62,255,181,.5)}
+.btn.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(62,255,181,.5)}70%{box-shadow:0 0 0 18px rgba(62,255,181,0)}100%{box-shadow:0 0 0 0 transparent}}
+
+/* ============================================================
+   FEATURE / INFO CARDS
+   ============================================================ */
+.fcard{padding:24px;text-align:center;transition:.4s}
+.fcard:hover{transform:translateY(-8px)}
+.fcard .ic{width:60px;height:60px;margin:0 auto 12px;border-radius:18px;display:grid;place-items:center;
+  font-size:26px;background:var(--grad);color:#04130d;box-shadow:0 10px 24px rgba(0,184,212,.35)}
+.fcard h3{font-size:17px;margin-bottom:4px}
+.fcard p{font-size:13.5px;color:var(--muted)}
+
+/* instagram-style place cards */
+.place{position:relative;border-radius:20px;overflow:hidden;height:300px;box-shadow:var(--shadow);
+  border:1px solid var(--border)}
+.place img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.place:hover img{transform:scale(1.12)}
+.place .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(2,16,12,.92));
+  display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
+.place .pin{position:absolute;top:12px;left:12px;background:var(--grad);color:#04130d;font-weight:800;
+  font-size:11px;padding:5px 12px;border-radius:999px}
+.place h3{font-size:19px;color:#fff}
+.place p{font-size:13px;color:#cfeede;margin:3px 0 6px}
+.price{display:inline-block;background:rgba(255,209,102,.18);color:var(--gold);border:1px solid rgba(255,209,102,.4);
+  font-weight:700;font-size:12.5px;padding:4px 12px;border-radius:999px;width:fit-content}
+
+/* ============================================================
+   TIMELINE (interactive day cards)
+   ============================================================ */
+.timeline{position:relative;margin-top:10px}
+.timeline::before{content:"";position:absolute;left:26px;top:0;bottom:0;width:3px;
+  background:linear-gradient(var(--neon),var(--neon2));border-radius:3px}
+@media(max-width:600px){.timeline::before{left:20px}}
+.tl-item{position:relative;padding-left:70px;margin-bottom:22px}
+@media(max-width:600px){.tl-item{padding-left:56px}}
+.tl-dot{position:absolute;left:14px;top:18px;width:26px;height:26px;border-radius:50%;
+  background:var(--grad);display:grid;place-items:center;color:#04130d;font-weight:800;font-size:12px;
+  box-shadow:0 0 0 6px rgba(62,255,181,.15)}
+@media(max-width:600px){.tl-dot{left:8px}}
+.tl-card{cursor:pointer;overflow:hidden;transition:.3s}
+.tl-card:hover{transform:translateX(6px)}
+.tl-head{display:flex;align-items:center;gap:12px;padding:16px 18px}
+.tl-head .dnum{font-size:12px;color:var(--gold);font-weight:700}
+.tl-head h3{font-size:16px;flex:1}
+.tl-head .chev{transition:.4s;color:var(--neon)}
+.tl-card.open .chev{transform:rotate(180deg)}
+.tl-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.tl-card.open .tl-body{max-height:700px}
+.tl-body-in{padding:0 18px 18px}
+.step{display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--border);font-size:14px}
+.step:last-child{border:0}
+.step .tm{flex:0 0 60px;color:var(--neon2);font-weight:700;font-size:12.5px}
+.daycost{margin-top:10px;background:rgba(255,209,102,.12);border:1px solid rgba(255,209,102,.3);
+  border-radius:12px;padding:9px 13px;font-size:13px;color:var(--gold);font-weight:600}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;min-width:480px;font-size:14px}
+th,td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--border)}
+th{background:rgba(0,0,0,.25);color:var(--neon);text-transform:uppercase;font-size:12px;letter-spacing:.5px}
+[data-theme="light"] th{background:rgba(7,92,57,.1)}
+td.n,th.n{text-align:right;white-space:nowrap}
+tbody tr:hover td{background:rgba(62,255,181,.06)}
+tfoot td{font-weight:800;color:var(--gold);background:rgba(255,209,102,.1)}
+
+/* budget counters */
+.counter-grid{margin-top:8px}
+.counter{padding:24px;text-align:center}
+.counter .ic{font-size:28px;color:var(--neon2)}
+.counter b{display:block;font-size:32px;font-weight:900;color:var(--gold);margin-top:6px}
+.counter small{color:var(--muted);font-size:12.5px}
+
+/* accordion / FAQ */
+.acc{margin-bottom:12px;overflow:hidden;cursor:pointer}
+.acc-h{display:flex;align-items:center;gap:12px;padding:16px 18px;font-weight:600;font-size:15px}
+.acc-h i:first-child{color:var(--neon)}
+.acc-h .pl{margin-left:auto;transition:.4s;color:var(--neon)}
+.acc.open .pl{transform:rotate(45deg)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .45s}
+.acc.open .acc-b{max-height:340px}
+.acc-b p{padding:0 18px 16px;color:var(--muted);font-size:14px}
+
+/* checklist */
+.check{display:flex;align-items:center;gap:12px;padding:13px 16px;font-size:14.5px;cursor:pointer;transition:.25s}
+.check:hover{background:rgba(62,255,181,.07)}
+.check i{color:var(--muted);font-size:20px;transition:.25s}
+.check.done i{color:var(--neon)}
+.check.done span{text-decoration:line-through;opacity:.55}
+
+/* emergency cards */
+.emg{display:flex;align-items:center;gap:14px;padding:16px}
+.emg .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:20px;
+  background:var(--grad-warm);color:#3a1a00;flex:0 0 48px}
+.emg b{display:block;font-size:16px}
+.emg small{color:var(--muted);font-size:12.5px}
+.emg .num{margin-left:auto;font-weight:800;color:var(--neon);font-size:18px}
+
+/* note */
+.note{border-left:4px solid var(--gold);background:rgba(255,209,102,.08);border-radius:12px;
+  padding:14px 16px;font-size:14px;color:var(--text);margin:16px 0}
+.note.warn{border-color:var(--pink);background:rgba(255,93,143,.1)}
+
+/* weather cards */
+.wx{padding:18px;text-align:center}
+.wx .ic{font-size:34px;color:var(--neon2)}
+.wx b{display:block;font-size:18px;margin-top:6px}
+.wx small{color:var(--muted);font-size:12.5px}
+
+/* route map */
+.routemap{padding:24px}
+.rline{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:center;margin-bottom:6px}
+.rstop{display:flex;align-items:center;gap:8px;background:var(--surface-2);border:1px solid var(--border);
+  padding:9px 14px;border-radius:14px;font-weight:600;font-size:13.5px}
+.rstop i{color:var(--neon)}
+.rarrow{color:var(--gold);font-size:18px}
+
+/* video */
+.vid .frame{position:relative;padding-top:56.25%}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:18px 18px 0 0}
+.vid .p{padding:14px}
+.vid b{font-size:14px;display:block}
+.vid small{color:var(--muted);font-size:12px}
+
+/* big budget banner */
+.bigbudget{padding:34px;text-align:center;background:var(--grad-warm);color:#3a1a00;border:none}
+.bigbudget b{font-size:clamp(34px,9vw,56px);font-weight:900;display:block;line-height:1}
+.bigbudget small{font-weight:600;opacity:.85}
+
+/* floating action buttons */
+.fab{position:fixed;right:18px;z-index:300;width:56px;height:56px;border-radius:50%;display:grid;
+  place-items:center;font-size:22px;color:#fff;box-shadow:0 10px 26px rgba(0,0,0,.4);cursor:pointer;
+  transition:.3s;border:none}
+.fab:hover{transform:scale(1.12)}
+#wa{bottom:20px;background:#25d366}
+#wa::after{content:"Plan with us";position:absolute;right:66px;white-space:nowrap;background:#25d366;
+  color:#fff;font-size:12px;font-weight:700;padding:6px 12px;border-radius:8px;opacity:0;transition:.3s;
+  font-family:'Poppins',sans-serif;pointer-events:none}
+#wa:hover::after{opacity:1}
+#top{bottom:86px;background:var(--grad);color:#04130d;opacity:0;visibility:hidden}
+#top.show{opacity:1;visibility:visible}
+
+/* music */
+.music{display:flex;align-items:center;gap:14px;padding:16px 18px;flex-wrap:wrap}
+.music .eq{display:flex;gap:3px;align-items:flex-end;height:30px}
+.music .eq span{width:5px;background:var(--neon);border-radius:3px;animation:eq 1s infinite ease-in-out}
+.music .eq span:nth-child(2){animation-delay:.2s}.music .eq span:nth-child(3){animation-delay:.4s}
+.music .eq span:nth-child(4){animation-delay:.1s}.music .eq span:nth-child(5){animation-delay:.3s}
+.music.paused .eq span{animation-play-state:paused;height:6px!important}
+@keyframes eq{0%,100%{height:8px}50%{height:28px}}
+
+/* footer */
+footer{position:relative;z-index:2;text-align:center;padding:60px 22px 100px;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.4));margin-top:40px}
+footer .fbrand{font-family:'Pacifico',cursive;font-size:30px;color:var(--gold);text-shadow:0 0 24px rgba(255,209,102,.4)}
+footer p{color:var(--muted);font-size:13.5px;margin-top:8px}
+.foot-pills{margin-top:14px}
+.fp{display:inline-block;background:var(--surface);border:1px solid var(--border);padding:7px 15px;
+  border-radius:999px;margin:4px;font-size:13px;font-weight:600}
+.kerala-strip{height:8px;background:repeating-linear-gradient(90deg,#13d182 0 22px,#ffd166 22px 44px,#ff7b54 44px 66px,#00b8d4 66px 88px);
+  margin-top:30px;border-radius:6px;opacity:.85}
+</style>
 </head>
 <body>
-    <h1>Hello World</h1>
+
+<!-- ============ LOADER ============ -->
+<div id="loader">
+  <div class="loader-ring"></div>
+  <div class="loader-txt">Kerala Wonders</div>
+  <div class="loader-sub">Loading your road trip…</div>
+</div>
+
+<!-- ============ RAIN + FLOATING ICONS ============ -->
+<div id="rain"></div>
+<i class="float-ico fa-solid fa-leaf" style="top:18%;left:6%"></i>
+<i class="float-ico fa-solid fa-mug-hot" style="top:42%;right:7%;animation-delay:1.5s"></i>
+<i class="float-ico fa-solid fa-umbrella" style="top:68%;left:10%;animation-delay:.8s"></i>
+<i class="float-ico fa-solid fa-mountain-sun" style="top:30%;right:14%;animation-delay:2.2s"></i>
+
+<!-- ============ NAVBAR ============ -->
+<nav id="nav">
+  <div class="brand"><i class="fa-solid fa-palm-tree"></i> Kerala '26</div>
+  <div class="nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#itinerary">Itinerary</a>
+    <a href="#transport">Transport</a>
+    <a href="#bikes">Bikes</a>
+    <a href="#hotels">Hotels</a>
+    <a href="#food">Food</a>
+    <a href="#nightlife">Nightlife</a>
+    <a href="#places">Places</a>
+    <a href="#budget">Budget</a>
+    <a href="#packing">Packing</a>
+    <a href="#tips">Tips</a>
+  </div>
+  <button class="theme-btn" id="themeBtn" title="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+</nav>
+
+<!-- ============ 1. HERO ============ -->
+<header class="hero" id="home">
+  <!-- moving clouds -->
+  <div class="cloud" style="width:220px;height:90px;top:14%;animation-duration:38s"></div>
+  <div class="cloud" style="width:160px;height:70px;top:24%;animation-duration:30s;animation-delay:6s"></div>
+  <div class="cloud" style="width:300px;height:110px;top:8%;animation-duration:48s;animation-delay:3s"></div>
+
+  <div class="hero-badge"><i class="fa-solid fa-route"></i> &nbsp;HYDERABAD → KERALA · BUDGET ROAD TRIP</div>
+  <h1>Munnar &amp; <span class="grad">Wayanad</span><br>Wonders</h1>
+  <div class="script">a 9-day monsoon road trip ~ 2026</div>
+  <p class="sub">Misty tea hills, roaring waterfalls, ancient caves &amp; cloud-kissed peaks — the lowest-budget, best-experience Kerala circuit for 4 explorers on two wheels.</p>
+
+  <div class="hero-chips">
+    <div class="chip"><b>9</b><small>Days</small></div>
+    <div class="chip"><b>4</b><small>Travellers</small></div>
+    <div class="chip"><b>03 Jul</b><small>2026 Start</small></div>
+    <div class="chip"><b>₹62k</b><small>Total</small></div>
+    <div class="chip"><b>₹15.5k</b><small>Per head</small></div>
+  </div>
+
+  <!-- countdown -->
+  <div class="countdown" id="countdown">
+    <div class="cd"><b id="cd-d">00</b><small>Days</small></div>
+    <div class="cd"><b id="cd-h">00</b><small>Hours</small></div>
+    <div class="cd"><b id="cd-m">00</b><small>Mins</small></div>
+    <div class="cd"><b id="cd-s">00</b><small>Secs</small></div>
+  </div>
+
+  <a href="#itinerary" class="btn pulse" style="margin-top:30px"><i class="fa-solid fa-map-location-dot"></i> Start the Journey</a>
+  <div class="scroll-hint"><i class="fa-solid fa-chevron-down"></i> &nbsp;scroll to explore</div>
+
+  <!-- animated mountains -->
+  <div class="mountains">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path class="m-back" fill="#0a4a36" d="M0,220 L180,120 L360,200 L560,90 L760,210 L980,110 L1200,200 L1440,130 L1440,320 L0,320Z"/>
+      <path class="m-mid" fill="#073a2a" d="M0,260 L220,160 L420,250 L640,150 L880,250 L1120,160 L1340,250 L1440,200 L1440,320 L0,320Z"/>
+      <path fill="#021c14" d="M0,300 L240,230 L520,300 L820,235 L1120,300 L1440,250 L1440,320 L0,320Z"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ============ 2. TRIP OVERVIEW ============ -->
+<section id="overview">
+  <div class="reveal">
+    <div class="tag">The Plan at a Glance</div>
+    <h2 class="neon">Two Hills, One <span>Epic Loop</span></h2>
+    <p class="lead">Munnar (south, near Kochi) &amp; Wayanad (north, near Kozhikode) sit ~205&nbsp;km apart. We enter via Kochi, explore Munnar's tea country, ride north to Wayanad, then loop home from Kozhikode — the cheapest, most scenic route with zero backtracking.</p>
+  </div>
+
+  <div class="grid g4 reveal">
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-train"></i></div><h3>Train In &amp; Out</h3><p>Sabari Express to Kochi, return from Kozhikode — sleeper class, lowest fares.</p></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-motorcycle"></i></div><h3>Rented Bikes</h3><p>2 two-wheelers for 4 — total freedom to chase viewpoints &amp; save money.</p></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-house-chimney"></i></div><h3>Budget Homestays</h3><p>Clean stays ~₹1,300/night for 4 — monsoon off-season rates.</p></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-cloud-showers-heavy"></i></div><h3>Monsoon Magic</h3><p>July = lush green, full waterfalls &amp; the year's lowest prices.</p></div>
+  </div>
+
+  <!-- weather cards -->
+  <div class="reveal" style="margin-top:34px">
+    <div class="tag"><i class="fa-solid fa-cloud-rain"></i> July Weather</div>
+    <div class="grid g4" style="margin-top:10px">
+      <div class="glass wx"><div class="ic"><i class="fa-solid fa-cloud-showers-heavy"></i></div><b>Heavy Rain</b><small>Peak SW monsoon</small></div>
+      <div class="glass wx"><div class="ic"><i class="fa-solid fa-temperature-half"></i></div><b>16–25°C</b><small>Cool &amp; misty hills</small></div>
+      <div class="glass wx"><div class="ic"><i class="fa-solid fa-water"></i></div><b>Full Falls</b><small>Best waterfall season</small></div>
+      <div class="glass wx"><div class="ic"><i class="fa-solid fa-triangle-exclamation"></i></div><b>Landslide risk</b><small>Check road status daily</small></div>
+    </div>
+  </div>
+
+  <div class="note warn reveal"><i class="fa-solid fa-triangle-exclamation"></i> <b>July is peak monsoon.</b> Expect heavy rain, fog &amp; possible ghat-road closures in Munnar/Wayanad. Carry rain gear, ride slow, keep the plan flexible — but enjoy the lowest rates &amp; greenest scenery of the year.</div>
+</section>
+
+<!-- ============ 3. DAY-BY-DAY ============ -->
+<section id="itinerary">
+  <div class="reveal">
+    <div class="tag">Step-by-Step</div>
+    <h2 class="neon">Day-by-Day <span>Itinerary</span></h2>
+    <p class="lead">Tap any day to expand. 9 trip days + a bonus arrival morning. Times are indicative — flex for rain &amp; rest.</p>
+  </div>
+
+  <div class="timeline reveal" id="timeline">
+
+    <div class="tl-item"><div class="tl-dot">1</div>
+      <div class="glass tl-card"><div class="tl-head"><span class="dnum">FRI · 3 JUL</span><h3>Board the Sabari Express 🚆</h3><i class="fa-solid fa-chevron-down chev"></i></div>
+        <div class="tl-body"><div class="tl-body-in">
+          <div class="step"><div class="tm">14:25</div><div>Board <b>Sabari SF Express (20629)</b> from Secunderabad/Hyderabad. Book sleeper (SL) 60 days early on IRCTC.</div></div>
+          <div class="step"><div class="tm">Eve</div><div>Pack home food / pantry meals. Cards, music, sleep — ~22 hr ride.</div></div>
+          <div class="daycost"><i class="fa-solid fa-wallet"></i> Train 4×SL ≈ ₹2,800 · Snacks ~₹600</div>
+        </div></div></div></div>
+
+    <div class="tl-item"><div class="tl-dot">2</div>
+      <div class="glass tl-card"><div class="tl-head"><span class="dnum">SAT · 4 JUL</span><h3>Kochi → Munnar Tea Country ⛰️</h3><i class="fa-solid fa-chevron-down chev"></i></div>
+        <div class="tl-body"><div class="tl-body-in">
+          <div class="step"><div class="tm">~13:00</div><div>Arrive Ernakulam Jn. Kerala "meals" lunch.</div></div>
+          <div class="step"><div class="tm">14:00</div><div><b>KSRTC bus to Munnar</b> (~4–5 hr, ₹130–160 pp) via Adimali ghats.</div></div>
+          <div class="step"><div class="tm">19:00</div><div>Check into homestay. Hot tea + early dinner.</div></div>
+          <div class="daycost"><i class="fa-solid fa-wallet"></i> Bus ₹600 · Stay ₹1,300 · Food ~₹900</div>
+        </div></div></div></div>
+
+    <div class="tl-item"><div class="tl-dot">3</div>
+      <div class="glass tl-card"><div class="tl-head"><span class="dnum">SUN · 5 JUL</span><h3>Munnar — Tea Trails &amp; Viewpoints 🍃</h3><i class="fa-solid fa-chevron-down chev"></i></div>
+        <div class="tl-body"><div class="tl-body-in">
+          <div class="step"><div class="tm">AM</div><div><b>Rent 2 bikes</b> (₹500/day). Ride to <b>Photo Point</b> &amp; <b>Pothamedu Viewpoint</b>.</div></div>
+          <div class="step"><div class="tm">Noon</div><div><b>Tata Tea Museum</b> (₹150 pp) — processing demo &amp; tasting.</div></div>
+          <div class="step"><div class="tm">Eve</div><div>Munnar market — spices, homemade chocolate, tea. Estate-lane sunset.</div></div>
+          <div class="daycost"><i class="fa-solid fa-wallet"></i> Bikes+fuel ₹1,400 · Museum ₹600 · Food ~₹1,200</div>
+        </div></div></div></div>
+
+    <div class="tl-item"><div class="tl-dot">4</div>
+      <div class="glass tl-card"><div class="tl-head"><span class="dnum">MON · 6 JUL</span><h3>Munnar — Dams, Lakes &amp; Tahr 🦌</h3><i class="fa-solid fa-chevron-down chev"></i></div>
+        <div class="tl-body"><div class="tl-body-in">
+          <div class="step"><div class="tm">07:00</div><div><b>Eravikulam NP (Rajamala)</b> — rare Nilgiri Tahr. Govt bus to gate (~₹200 pp).</div></div>
+          <div class="step"><div class="tm">Noon</div><div><b>Mattupetty Dam</b> (boat ~₹400) → <b>Echo Point</b> → <b>Kundala Lake</b>.</div></div>
+          <div class="step"><div class="tm">Eve</div><div><b>Blossom Park</b> riverside walk; misty ride home.</div></div>
+          <div class="daycost"><i class="fa-solid fa-wallet"></i> Eravikulam ~₹1,000 · Boating ~₹800 · Bikes ₹1,400 · Food ~₹1,200</div>
+        </div></div></div></div>
+
+    <div class="tl-item"><div class="tl-dot">5</div>
+      <div class="glass tl-card"><div class="tl-head"><span class="dnum">TUE · 7 JUL</span><h3>Munnar — Sunrise &amp; Waterfalls 🌄</h3><i class="fa-solid fa-chevron-down chev"></i></div>
+        <div class="tl-body"><div class="tl-body-in">
+          <div class="step"><div class="tm">04:30</div><div><b>Kolukkumalai sunrise jeep</b> (~₹2,500 shared) — world's highest tea estate, cloud-sea. (If road open.)</div></div>
+          <div class="step"><div class="tm">Noon</div><div><b>Top Station</b> viewpoint → <b>Attukad</b> &amp; <b>Lakkam</b> waterfalls (thundering in July).</div></div>
+          <div class="step"><div class="tm">Eve</div><div>Return bikes. Toddy-shop fish curry optional.</div></div>
+          <div class="daycost"><i class="fa-solid fa-wallet"></i> Jeep ₹2,500 · Falls ~₹400 · Food ~₹1,200</div>
+        </div></div></div></div>
+
+    <div class="tl-item"><div class="tl-dot">6</div>
+      <div class="glass tl-card"><div class="tl-head"><span class="dnum">WED · 8 JUL</span><h3>The Big Ride: Munnar → Wayanad 🛣️</h3><i class="fa-solid fa-chevron-down chev"></i></div>
+        <div class="tl-body"><div class="tl-body-in">
+          <div class="step"><div class="tm">06:30</div><div>Early <b>KSRTC bus</b> (~205 km, 8–9 hr, ₹500–550 pp) via Kochi/Muvattupuzha. (Cab ~5–6 hr, ₹6–7k group.)</div></div>
+          <div class="step"><div class="tm">~16:00</div><div>Reach <b>Kalpetta, Wayanad</b>. Check in, freshen up.</div></div>
+          <div class="step"><div class="tm">Eve</div><div>Relax, plan next 2 days, local dinner.</div></div>
+          <div class="daycost"><i class="fa-solid fa-wallet"></i> Bus ₹2,200 · Stay ₹1,300 · Food ~₹1,000</div>
+        </div></div></div></div>
+
+    <div class="tl-item"><div class="tl-dot">7</div>
+      <div class="glass tl-card"><div class="tl-head"><span class="dnum">THU · 9 JUL</span><h3>Wayanad — Caves &amp; Waterfalls 🪨</h3><i class="fa-solid fa-chevron-down chev"></i></div>
+        <div class="tl-body"><div class="tl-body-in">
+          <div class="step"><div class="tm">AM</div><div><b>Rent 2 scooters</b> (₹400/day). <b>Edakkal Caves</b> (₹50 pp, 8–4, <b>closed Mon</b>) — 6,000-yr petroglyphs.</div></div>
+          <div class="step"><div class="tm">Noon</div><div><b>Phantom Rock</b> + viewpoints.</div></div>
+          <div class="step"><div class="tm">Aft</div><div><b>Soochipara (Sentinel Rock) Falls</b> (~₹90 pp) — full-force monsoon cascade.</div></div>
+          <div class="daycost"><i class="fa-solid fa-wallet"></i> Scooters+fuel ₹1,200 · Entries ~₹700 · Food ~₹1,200</div>
+        </div></div></div></div>
+
+    <div class="tl-item"><div class="tl-dot">8</div>
+      <div class="glass tl-card"><div class="tl-head"><span class="dnum">FRI · 10 JUL</span><h3>Wayanad — Heart Lake, Dam &amp; Wildlife 💚</h3><i class="fa-solid fa-chevron-down chev"></i></div>
+        <div class="tl-body"><div class="tl-body-in">
+          <div class="step"><div class="tm">Early</div><div><b>Chembra Peak</b> trek to the famous <b>heart-shaped lake</b> (permit+guide ~₹750/grp, ₹20 pp).</div></div>
+          <div class="step"><div class="tm">Noon</div><div><b>Banasura Sagar Dam</b> (₹40 pp, boat ~₹600) — India's largest earth dam.</div></div>
+          <div class="step"><div class="tm">Aft</div><div><b>Pookode Lake</b> (₹40 pp) · optional <b>Muthanga/Tholpetty safari</b> (~₹2,500).</div></div>
+          <div class="daycost"><i class="fa-solid fa-wallet"></i> Chembra ~₹830 · Banasura ~₹800 · Pookode ~₹400 · Safari ~₹2,500 · Food ~₹1,200</div>
+        </div></div></div></div>
+
+    <div class="tl-item"><div class="tl-dot">9</div>
+      <div class="glass tl-card"><div class="tl-head"><span class="dnum">SAT · 11 JUL</span><h3>Wayanad → Kozhikode → Home 🌊</h3><i class="fa-solid fa-chevron-down chev"></i></div>
+        <div class="tl-body"><div class="tl-body-in">
+          <div class="step"><div class="tm">AM</div><div>Shopping — Wayanad coffee, spices, bamboo crafts, chocolate. Check out.</div></div>
+          <div class="step"><div class="tm">13:00</div><div><b>Bus to Kozhikode</b> (~2.5 hr, ₹90–110 pp) via Thamarassery ghat (9 hairpins!).</div></div>
+          <div class="step"><div class="tm">Eve</div><div>Kozhikode beach + Calicut halwa &amp; biryani.</div></div>
+          <div class="step"><div class="tm">23:30</div><div><b>Train to Hyderabad</b> (12790 etc.) — sleeper ≈ ₹600 pp.</div></div>
+          <div class="daycost"><i class="fa-solid fa-wallet"></i> Bus ₹400 · Train ₹2,400 · Food ~₹1,200</div>
+        </div></div></div></div>
+
+    <div class="tl-item"><div class="tl-dot"><i class="fa-solid fa-house"></i></div>
+      <div class="glass tl-card open"><div class="tl-head"><span class="dnum">SUN · 12 JUL</span><h3>Arrive Hyderabad 🏠 (bonus)</h3><i class="fa-solid fa-chevron-down chev"></i></div>
+        <div class="tl-body"><div class="tl-body-in">
+          <div class="step"><div class="tm">~23:40</div><div>Reach home — full memory cards, happy hearts, empty wallets! 🌿</div></div>
+        </div></div></div></div>
+
+  </div>
+</section>
+
+<!-- ============ 4. TRANSPORT ============ -->
+<section id="transport">
+  <div class="reveal">
+    <div class="tag">Get There &amp; Around</div>
+    <h2 class="neon">Transport <span>Details</span></h2>
+    <p class="lead">Train both ways + KSRTC buses between cities = cheapest backbone. Here's the Google-Maps-style route &amp; every cost.</p>
+  </div>
+
+  <div class="glass routemap reveal">
+    <div class="rline">
+      <span class="rstop"><i class="fa-solid fa-city"></i> Hyderabad</span><span class="rarrow"><i class="fa-solid fa-arrow-right-long"></i></span>
+      <span class="rstop"><i class="fa-solid fa-train"></i> Ernakulam</span><span class="rarrow"><i class="fa-solid fa-arrow-right-long"></i></span>
+      <span class="rstop"><i class="fa-solid fa-mountain"></i> Munnar</span><span class="rarrow"><i class="fa-solid fa-arrow-right-long"></i></span>
+      <span class="rstop"><i class="fa-solid fa-tree"></i> Wayanad</span><span class="rarrow"><i class="fa-solid fa-arrow-right-long"></i></span>
+      <span class="rstop"><i class="fa-solid fa-water"></i> Kozhikode</span><span class="rarrow"><i class="fa-solid fa-arrow-right-long"></i></span>
+      <span class="rstop"><i class="fa-solid fa-city"></i> Hyderabad</span>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:8px">One-way loop · no backtracking · ~1,300 km each train leg</p>
+  </div>
+
+  <div class="tbl-wrap glass reveal" style="margin-top:18px">
+    <table>
+      <thead><tr><th>Leg</th><th>Mode</th><th>Time</th><th class="n">Cost (4 pax)</th></tr></thead>
+      <tbody>
+        <tr><td>Hyderabad → Ernakulam</td><td>Sabari Exp (20629), Sleeper</td><td>~22 hr</td><td class="n">₹2,800</td></tr>
+        <tr><td>Ernakulam → Munnar</td><td>KSRTC bus</td><td>4–5 hr</td><td class="n">₹600</td></tr>
+        <tr><td>Munnar → Wayanad</td><td>KSRTC bus (via Kochi)</td><td>8–9 hr</td><td class="n">₹2,200</td></tr>
+        <tr><td>Wayanad → Kozhikode</td><td>KSRTC bus (ghat)</td><td>2.5 hr</td><td class="n">₹400</td></tr>
+        <tr><td>Kozhikode → Hyderabad</td><td>Train (12790), Sleeper</td><td>~24 hr</td><td class="n">₹2,400</td></tr>
+        <tr><td>Local autos / shared jeeps</td><td>Kolukkumalai + safari + hops</td><td>—</td><td class="n">₹6,000</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="3">Transport Total (excl. bike rental)</td><td class="n">₹14,400</td></tr></tfoot>
+    </table>
+  </div>
+  <div class="note reveal"><i class="fa-solid fa-circle-info"></i> Auto/taxi estimates: local auto ₹50–150/hop · airport-style cab not needed. Return train runs select days — confirm on IRCTC &amp; book ~60 days ahead to avoid Tatkal premium.</div>
+</section>
+
+<!-- ============ 5. BIKE RENTAL ============ -->
+<section id="bikes">
+  <div class="reveal">
+    <div class="tag">Ride Free</div>
+    <h2 class="neon">Bike Rental <span>Details</span></h2>
+    <p class="lead">2 two-wheelers for 4 people = cheapest, most flexible hill exploring. Carry driving licence; helmets mandatory.</p>
+  </div>
+  <div class="grid g3 reveal">
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-motorcycle"></i></div><h3>Scooter (Activa)</h3><p>₹400–500 / day · easy &amp; light for hill roads.</p><span class="price">~₹450/day</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-gauge-high"></i></div><h3>Geared Bike</h3><p>Pulsar / Himalayan ₹700–900 / day · better for ghats.</p><span class="price">~₹800/day</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-gas-pump"></i></div><h3>Petrol</h3><p>~₹110/L · budget ~₹2,400 total fuel for the trip.</p><span class="price">~₹2,400 fuel</span></div>
+  </div>
+  <div class="tbl-wrap glass reveal" style="margin-top:18px">
+    <table>
+      <thead><tr><th>Place</th><th>Bikes × Days</th><th class="n">Rent</th><th class="n">Fuel</th><th class="n">Subtotal</th></tr></thead>
+      <tbody>
+        <tr><td>Munnar</td><td>2 × 3 days</td><td class="n">₹3,000</td><td class="n">₹1,500</td><td class="n">₹4,500</td></tr>
+        <tr><td>Wayanad</td><td>2 × 2 days</td><td class="n">₹1,600</td><td class="n">₹900</td><td class="n">₹2,500</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="4">Bike Total</td><td class="n">₹7,000</td></tr></tfoot>
+    </table>
+  </div>
+  <div class="note warn reveal"><i class="fa-solid fa-helmet-safety"></i> <b>Monsoon riding:</b> wet, foggy hairpin bends. Ride slow, no night riding, waterproof your phone, and switch to bus/jeep if a ghat is closed. Tolls negligible on these hill routes. Keep ₹1,000 deposit/ID ready.</div>
+</section>
+
+<!-- ============ 6. HOTELS ============ -->
+<section id="hotels">
+  <div class="reveal">
+    <div class="tag">Where to Sleep</div>
+    <h2 class="neon">Hotel <span>Recommendations</span></h2>
+    <p class="lead">Monsoon = off-season = lowest rates. Book a family room / 2 doubles for 4. Always confirm hot water &amp; parking.</p>
+  </div>
+  <div class="grid g3 reveal">
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-bed"></i></div><h3>Budget Hostels</h3><p>Dorm beds ₹400–600 pp · Zostel-style social stays.</p><span class="price">₹400–600 / bed</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-house-chimney"></i></div><h3>Homestays</h3><p>Family room for 4 · often includes breakfast.</p><span class="price">₹1,200–1,800 / night</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-leaf"></i></div><h3>Eco / Estate Stays</h3><p>Plantation-view budget cottages, great vibe.</p><span class="price">₹1,500–2,200 / night</span></div>
+  </div>
+  <div class="tbl-wrap glass reveal" style="margin-top:18px">
+    <table>
+      <thead><tr><th>Place</th><th>Nights</th><th>Area / Type</th><th class="n">Rate (4 pax)</th><th class="n">Subtotal</th></tr></thead>
+      <tbody>
+        <tr><td>Munnar</td><td>4</td><td>Homestay near town / Pothamedu</td><td class="n">₹1,300</td><td class="n">₹5,200</td></tr>
+        <tr><td>Wayanad</td><td>3</td><td>Homestay near Kalpetta / Meppadi</td><td class="n">₹1,300</td><td class="n">₹3,900</td></tr>
+        <tr><td>Train</td><td>2</td><td>Sleeper berths</td><td class="n">—</td><td class="n">—</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="4">Stay Total (7 nights)</td><td class="n">₹9,100</td></tr></tfoot>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 7. FOOD ============ -->
+<section id="food">
+  <div class="reveal">
+    <div class="tag">Eat Local</div>
+    <h2 class="neon">Food <span>Recommendations</span></h2>
+    <p class="lead">Kerala food is cheap, fresh &amp; delicious. A full "meals" plate ₹80–150; seafood/non-veg ₹150–250. Budget ~₹350 pp/day.</p>
+  </div>
+  <div class="grid g3 reveal">
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-bowl-rice"></i></div><h3>Kerala Meals</h3><p>Rice, sambar, avial, thoran on banana leaf.</p><span class="price">₹80–150</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-plate-wheat"></i></div><h3>Appam &amp; Stew</h3><p>Lacy rice pancakes + veg/chicken stew.</p><span class="price">₹100–180</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-fish"></i></div><h3>Karimeen / Beef Fry</h3><p>Pearl-spot fish, parotta, toddy-shop style.</p><span class="price">₹150–250</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-mug-hot"></i></div><h3>Estate Tea &amp; Coffee</h3><p>Fresh from Munnar/Wayanad gardens.</p><span class="price">₹15–40</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-cookie-bite"></i></div><h3>Homemade Chocolate</h3><p>Munnar specialty — cheap edible gifts.</p><span class="price">₹50–200</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-bowl-food"></i></div><h3>Calicut Halwa</h3><p>Iconic Kozhikode sweet on the way home.</p><span class="price">₹40–120</span></div>
+  </div>
+  <div class="note reveal"><i class="fa-solid fa-piggy-bank"></i> <b>Food budget:</b> ~₹350 pp/day × 8 days = <b>₹11,500</b> for 4. Eat at local "meals" hotels (not tourist cafes) to save big.</div>
+</section>
+
+<!-- ============ 8. ALCOHOL & NIGHTLIFE ============ -->
+<section id="nightlife">
+  <div class="reveal">
+    <div class="tag">After Dark</div>
+    <h2 class="neon">Alcohol &amp; <span>Nightlife</span></h2>
+    <p class="lead">Kerala's hill towns are quiet at night — nightlife is bonfires, toddy shops &amp; star-gazing, not clubs. Budget for relaxed evenings.</p>
+  </div>
+  <div class="grid g3 reveal">
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-wine-bottle"></i></div><h3>Bevco / Bar-Hotels</h3><p>State liquor shops &amp; bar-hotels. Expect queues.</p><span class="price">Beer ₹150–200</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-martini-glass-citrus"></i></div><h3>Toddy Shops</h3><p>Cheap local palm wine + spicy fish curry — authentic!</p><span class="price">Toddy ₹50–100</span></div>
+    <div class="glass fcard"><div class="ic"><i class="fa-solid fa-fire"></i></div><h3>Homestay Bonfire</h3><p>Many stays allow a bonfire + music night.</p><span class="price">Often free</span></div>
+  </div>
+  <div class="note warn reveal"><i class="fa-solid fa-ban"></i> <b>Never drink &amp; ride.</b> Use a bus/auto. Budget set aside: <b>~₹6,000 for the group</b> (≈₹150–200 pp on drinking days). Carry ID; legal drinking age in Kerala is 23.</div>
+</section>
+
+<!-- ============ 9 & 10. PLACES + DREAM PLACES ============ -->
+<section id="places">
+  <div class="reveal">
+    <div class="tag">Dream Destinations</div>
+    <h2 class="neon">Places to <span>Visit</span></h2>
+    <p class="lead">Best photography spots, waterfalls, tea plantations, forest gems &amp; sunrise points across both hills.</p>
+  </div>
+
+  <h3 style="color:var(--neon);margin:6px 0 14px" class="reveal"><i class="fa-solid fa-mountain-sun"></i> Munnar</h3>
+  <div class="grid g3 reveal">
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/tea,plantation,munnar/all" alt="Tea Gardens"><span class="pin">📸 Photo</span><div class="ov"><h3>Tea Gardens</h3><p>Endless emerald slopes · sunrise magic.</p><span class="price">Free</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/mountain,viewpoint,clouds/all" alt="Top Station"><span class="pin">🌄 View</span><div class="ov"><h3>Top Station</h3><p>Highest viewpoint · Kerala–TN border.</p><span class="price">~₹40</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/valley,echo,hills/all" alt="Echo Point"><span class="pin">🔊 Fun</span><div class="ov"><h3>Echo Point</h3><p>Shout &amp; hear it bounce off the hills.</p><span class="price">Free</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/dam,reservoir,boat/all" alt="Mattupetty Dam"><span class="pin">🚤 Boat</span><div class="ov"><h3>Mattupetty Dam</h3><p>Boating + green valley views.</p><span class="price">~₹400/grp</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/lake,hills,boat/all" alt="Kundala Lake"><span class="pin">🛶 Calm</span><div class="ov"><h3>Kundala Lake</h3><p>Shikara &amp; pedal boating.</p><span class="price">~₹400</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/wildlife,deer,grassland/all" alt="Eravikulam"><span class="pin">🦌 Wildlife</span><div class="ov"><h3>Eravikulam NP</h3><p>Rare Nilgiri Tahr &amp; Neelakurinji.</p><span class="price">~₹200 pp</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/waterfall,forest,green/all" alt="Attukad Falls"><span class="pin">💦 Falls</span><div class="ov"><h3>Attukad Waterfalls</h3><p>Thunders fullest in monsoon.</p><span class="price">~₹40</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/sunrise,tea,clouds/all" alt="Kolukkumalai"><span class="pin">🌅 Sunrise</span><div class="ov"><h3>Kolukkumalai</h3><p>World's highest tea estate · cloud sea.</p><span class="price">Jeep ~₹2,500</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/garden,flowers,park/all" alt="Blossom Park"><span class="pin">🌸 Walk</span><div class="ov"><h3>Blossom Park</h3><p>Riverside garden stroll.</p><span class="price">~₹50</span></div></div>
+  </div>
+
+  <h3 style="color:var(--neon);margin:30px 0 14px" class="reveal"><i class="fa-solid fa-tree"></i> Wayanad</h3>
+  <div class="grid g3 reveal">
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/cave,rock,petroglyph/all" alt="Edakkal Caves"><span class="pin">🪨 6000 yrs</span><div class="ov"><h3>Edakkal Caves</h3><p>Prehistoric carvings · short trek.</p><span class="price">₹50 pp</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/earth,dam,reservoir/all" alt="Banasura Dam"><span class="pin">🏞️ Largest</span><div class="ov"><h3>Banasura Sagar Dam</h3><p>India's largest earth dam · boating.</p><span class="price">₹40 + boat</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/waterfall,rock,jungle/all" alt="Soochipara Falls"><span class="pin">💦 Falls</span><div class="ov"><h3>Soochipara Falls</h3><p>Multi-tier monsoon cascade.</p><span class="price">~₹90 pp</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/heart,lake,mountain,trek/all" alt="Chembra Peak"><span class="pin">❤️ Iconic</span><div class="ov"><h3>Chembra Peak</h3><p>Heart-shaped lake · highest peak.</p><span class="price">₹20 + guide</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/lake,forest,calm/all" alt="Pookode Lake"><span class="pin">🛶 Lake</span><div class="ov"><h3>Pookode Lake</h3><p>Forest-ringed freshwater lake.</p><span class="price">₹40 pp</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/bamboo,forest,green/all" alt="Bamboo Forest"><span class="pin">🎋 Hidden</span><div class="ov"><h3>Bamboo Forest</h3><p>Dense green tunnels &amp; trails.</p><span class="price">Varies</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/hill,viewpoint,mist,india/all" alt="900 Kandi"><span class="pin">🌫️ Gem</span><div class="ov"><h3>900 Kandi</h3><p>Glass-bridge &amp; misty cliff views.</p><span class="price">Activity fee</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/island,river,green/all" alt="Kuruvadweep"><span class="pin">🏝️ Island</span><div class="ov"><h3>Kuruvadweep</h3><p>River island (may shut in monsoon).</p><span class="price">~₹130 pp</span></div></div>
+    <div class="place"><img loading="lazy" src="https://loremflickr.com/600/400/rock,formation,hill/all" alt="Phantom Rock"><span class="pin">💀 Quirky</span><div class="ov"><h3>Phantom Rock</h3><p>Skull-shaped natural rock.</p><span class="price">Free</span></div></div>
+  </div>
+
+  <div class="note reveal"><i class="fa-solid fa-gem"></i> <b>Hidden gems &amp; sunrise spots:</b> Kolukkumalai (sunrise), Pothamedu &amp; Top Station (sunset), Chembra heart-lake (photography), Lakkam &amp; Meenmutty falls (monsoon power), 900 Kandi glass bridge (adventure). Note: Kuruvadweep &amp; some treks <b>close during heavy monsoon</b> — verify locally.</div>
+</section>
+
+<!-- ============ 11. BUDGET ============ -->
+<section id="budget">
+  <div class="reveal">
+    <div class="tag">The Numbers</div>
+    <h2 class="neon">Total Budget <span>Breakdown</span></h2>
+    <p class="lead">Realistic lowest-budget estimate for 4 people · 9 days (monsoon rates). Counters animate as you scroll.</p>
+  </div>
+
+  <!-- animated counters -->
+  <div class="grid g4 counter-grid reveal">
+    <div class="glass counter"><div class="ic"><i class="fa-solid fa-sack-dollar"></i></div><b>₹<span class="count" data-to="63000">0</span></b><small>Group Total</small></div>
+    <div class="glass counter"><div class="ic"><i class="fa-solid fa-user"></i></div><b>₹<span class="count" data-to="15750">0</span></b><small>Per Person</small></div>
+    <div class="glass counter"><div class="ic"><i class="fa-solid fa-calendar-day"></i></div><b>₹<span class="count" data-to="7000">0</span></b><small>Avg / Day (group)</small></div>
+    <div class="glass counter"><div class="ic"><i class="fa-solid fa-hand-holding-dollar"></i></div><b>₹<span class="count" data-to="5000">0</span></b><small>Safety Buffer</small></div>
+  </div>
+
+  <div class="tbl-wrap glass reveal" style="margin-top:18px">
+    <table>
+      <thead><tr><th>Category</th><th>Details</th><th class="n">Total (4)</th><th class="n">Per head</th></tr></thead>
+      <tbody>
+        <tr><td>🚆 Trains (both ways)</td><td>HYD↔Kochi/Kozhikode sleeper</td><td class="n">₹5,200</td><td class="n">₹1,300</td></tr>
+        <tr><td>🚌 Inter-city buses</td><td>3 KSRTC legs</td><td class="n">₹3,200</td><td class="n">₹800</td></tr>
+        <tr><td>🛵 Bikes + fuel</td><td>2 bikes both hills</td><td class="n">₹7,000</td><td class="n">₹1,750</td></tr>
+        <tr><td>🚙 Jeeps / autos</td><td>Kolukkumalai + safari + hops</td><td class="n">₹6,000</td><td class="n">₹1,500</td></tr>
+        <tr><td>🏡 Stay</td><td>7 nights homestays</td><td class="n">₹9,100</td><td class="n">₹2,275</td></tr>
+        <tr><td>🍛 Food</td><td>~₹350 pp/day × 8</td><td class="n">₹11,500</td><td class="n">₹2,875</td></tr>
+        <tr><td>🍺 Alcohol &amp; nightlife</td><td>Group, across trip</td><td class="n">₹6,000</td><td class="n">₹1,500</td></tr>
+        <tr><td>🎟️ Entries &amp; activities</td><td>Parks, caves, falls, treks</td><td class="n">₹5,000</td><td class="n">₹1,250</td></tr>
+        <tr><td>🛍️ Shopping &amp; buffer</td><td>Gifts, emergencies</td><td class="n">₹5,000</td><td class="n">₹1,250</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">GRAND TOTAL</td><td class="n">≈ ₹58–63k</td><td class="n">≈ ₹15.7k</td></tr></tfoot>
+    </table>
+  </div>
+
+  <div class="grid g2 reveal" style="margin-top:18px">
+    <div class="glass" style="padding:20px"><h3 style="color:var(--neon)"><i class="fa-solid fa-coins"></i> Minimum Budget</h3><p style="color:var(--muted);margin-top:6px">Dorms + buses only + skip jeep/safari + cook some meals.</p><div class="daycost" style="margin-top:10px">≈ ₹45,000 group · ₹11,250 pp</div></div>
+    <div class="glass" style="padding:20px"><h3 style="color:var(--gold)"><i class="fa-solid fa-star"></i> Comfortable Budget</h3><p style="color:var(--muted);margin-top:6px">Private rooms + all activities + occasional cab.</p><div class="daycost" style="margin-top:10px">≈ ₹78,000 group · ₹19,500 pp</div></div>
+  </div>
+
+  <div class="note reveal"><i class="fa-solid fa-lightbulb"></i> <b>Money-saving tips:</b> book trains 60 days early · KSRTC over cabs · local "meals" hotels · share rooms · skip Kolukkumalai jeep + safari to save ~₹5,000 · monsoon already = off-season discounts.</div>
+</section>
+
+<!-- ============ 12. EMERGENCY CONTACTS ============ -->
+<section id="emergency">
+  <div class="reveal">
+    <div class="tag">Stay Safe</div>
+    <h2 class="neon">Emergency <span>Contacts</span></h2>
+    <p class="lead">Save these before you go. Hill areas have patchy signal — keep them offline too.</p>
+  </div>
+  <div class="grid g2 reveal">
+    <div class="glass emg"><div class="ic"><i class="fa-solid fa-shield-halved"></i></div><div><b>Police</b><small>All-India emergency</small></div><div class="num">100</div></div>
+    <div class="glass emg"><div class="ic"><i class="fa-solid fa-truck-medical"></i></div><div><b>Ambulance</b><small>Medical emergency</small></div><div class="num">108</div></div>
+    <div class="glass emg"><div class="ic"><i class="fa-solid fa-fire-extinguisher"></i></div><div><b>Fire</b><small>Fire &amp; rescue</small></div><div class="num">101</div></div>
+    <div class="glass emg"><div class="ic"><i class="fa-solid fa-phone"></i></div><div><b>Unified Emergency</b><small>Single number</small></div><div class="num">112</div></div>
+    <div class="glass emg"><div class="ic"><i class="fa-solid fa-suitcase-rolling"></i></div><div><b>Tourist Helpline</b><small>India tourism</small></div><div class="num">1363</div></div>
+    <div class="glass emg"><div class="ic"><i class="fa-solid fa-venus"></i></div><div><b>Women Helpline</b><small>24×7</small></div><div class="num">1091</div></div>
+    <div class="glass emg"><div class="ic"><i class="fa-solid fa-leaf"></i></div><div><b>Kerala Tourism</b><small>Info &amp; support</small></div><div class="num">1800-425-4747</div></div>
+    <div class="glass emg"><div class="ic"><i class="fa-solid fa-road"></i></div><div><b>Highway / Road Help</b><small>NH assistance</small></div><div class="num">1033</div></div>
+  </div>
+</section>
+
+<!-- ============ 13. PACKING CHECKLIST ============ -->
+<section id="packing">
+  <div class="reveal">
+    <div class="tag">Don't Forget</div>
+    <h2 class="neon">Packing <span>Checklist</span></h2>
+    <p class="lead">Tap to tick items off. Built for a Kerala monsoon road trip.</p>
+  </div>
+  <div class="grid g2 reveal" id="checklist">
+    <div class="glass" style="overflow:hidden">
+      <div class="check"><i class="fa-regular fa-square"></i><span>Raincoat / poncho + umbrella</span></div>
+      <div class="check"><i class="fa-regular fa-square"></i><span>Waterproof phone pouch + dry bag</span></div>
+      <div class="check"><i class="fa-regular fa-square"></i><span>Quick-dry clothes &amp; extra socks</span></div>
+      <div class="check"><i class="fa-regular fa-square"></i><span>Grippy trekking shoes / sandals</span></div>
+      <div class="check"><i class="fa-regular fa-square"></i><span>Power bank + chargers</span></div>
+      <div class="check"><i class="fa-regular fa-square"></i><span>Driving licence + ID proofs</span></div>
+    </div>
+    <div class="glass" style="overflow:hidden">
+      <div class="check"><i class="fa-regular fa-square"></i><span>Printed train tickets + offline maps</span></div>
+      <div class="check"><i class="fa-regular fa-square"></i><span>Basic meds, motion-sickness tablets</span></div>
+      <div class="check"><i class="fa-regular fa-square"></i><span>Odomos / salt (leech protection)</span></div>
+      <div class="check"><i class="fa-regular fa-square"></i><span>Enough cash (hills are cash-heavy)</span></div>
+      <div class="check"><i class="fa-regular fa-square"></i><span>Light jacket (cool nights)</span></div>
+      <div class="check"><i class="fa-regular fa-square"></i><span>Reusable water bottle + snacks</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14. TIPS + FAQ ============ -->
+<section id="tips">
+  <div class="reveal">
+    <div class="tag">Travel Smart</div>
+    <h2 class="neon">Best Travel <span>Tips &amp; FAQ</span></h2>
+    <p class="lead">Tap a question to expand.</p>
+  </div>
+  <div class="reveal" id="faq">
+    <div class="glass acc"><div class="acc-h"><i class="fa-solid fa-cloud-rain"></i> Is July a good time to visit Munnar &amp; Wayanad?<i class="fa-solid fa-plus pl"></i></div><div class="acc-b"><p>July is peak monsoon — lush greenery, full waterfalls and the lowest prices of the year. Downsides: heavy rain, fog, and occasional ghat-road/landslide closures. Great for budget + scenery if you stay flexible and check road status daily.</p></div></div>
+    <div class="glass acc"><div class="acc-h"><i class="fa-solid fa-train"></i> When should we book trains?<i class="fa-solid fa-plus pl"></i></div><div class="acc-b"><p>~60 days in advance on IRCTC to get confirmed sleeper berths at base fare. The return Kozhikode→Hyderabad train runs on select days — verify the exact date before locking your plan.</p></div></div>
+    <div class="glass acc"><div class="acc-h"><i class="fa-solid fa-motorcycle"></i> Do we need a licence for bike rental?<i class="fa-solid fa-plus pl"></i></div><div class="acc-b"><p>Yes — a valid driving licence is mandatory, plus a ₹1,000 deposit or ID. Helmets are required by law. Ride slowly on wet hairpin roads and avoid night riding.</p></div></div>
+    <div class="glass acc"><div class="acc-h"><i class="fa-solid fa-wallet"></i> How much cash should we carry?<i class="fa-solid fa-plus pl"></i></div><div class="acc-b"><p>Keep a good chunk in cash — many homestays, toddy shops, waterfalls and jeep operators are cash-only, and ATMs are sparse in the hills. Aim to carry the day's spend + a reserve.</p></div></div>
+    <div class="glass acc"><div class="acc-h"><i class="fa-solid fa-route"></i> Why not do both hills in fewer days?<i class="fa-solid fa-plus pl"></i></div><div class="acc-b"><p>Munnar &amp; Wayanad are ~205 km / 8–9 hr apart. The one-way Kochi→Munnar→Wayanad→Kozhikode loop avoids backtracking and keeps both transport cost and travel time low.</p></div></div>
+  </div>
+
+  <!-- music section -->
+  <div class="glass music reveal" id="music" style="margin-top:24px">
+    <div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
+    <div style="flex:1"><b><i class="fa-solid fa-music"></i> Road-trip Vibes</b><br><small style="color:var(--muted)">Malayalam lo-fi + retro Tamil/Telugu hits for the ghats</small></div>
+    <button class="btn" id="musicBtn"><i class="fa-solid fa-play"></i> &nbsp;Toggle Beat</button>
+  </div>
+</section>
+
+<!-- ============ VIDEOS ============ -->
+<section id="videos">
+  <div class="reveal">
+    <div class="tag">Watch Before You Go</div>
+    <h2 class="neon">Best YouTube <span>Guides</span></h2>
+    <p class="lead">Hand-picked recent budget guides for Munnar, Wayanad &amp; the full Kerala circuit.</p>
+  </div>
+  <div class="grid g3 reveal">
+    <div class="glass vid"><div class="frame"><iframe loading="lazy" src="https://www.youtube.com/embed/R_D3BnlEwb4" title="Munnar Travel Guide 2026" allowfullscreen></iframe></div><div class="p"><b>Munnar Guide 2026 — Itinerary &amp; Budget</b><small>Most up-to-date Munnar plan</small></div></div>
+    <div class="glass vid"><div class="frame"><iframe loading="lazy" src="https://www.youtube.com/embed/Z-YTTLAad5Y" title="Wayanad Budget Tour 2025" allowfullscreen></iframe></div><div class="p"><b>Wayanad Budget Tour 2025</b><small>How to plan a low-budget trip</small></div></div>
+    <div class="glass vid"><div class="frame"><iframe loading="lazy" src="https://www.youtube.com/embed/qwIrZQz9aok" title="Kerala Full Guide" allowfullscreen></iframe></div><div class="p"><b>Kerala Trip Guide (Hindi)</b><small>Munnar · Alleppey · Wayanad</small></div></div>
+  </div>
+</section>
+
+<!-- ============ 15. FINAL SUMMARY ============ -->
+<section id="summary">
+  <div class="glass bigbudget reveal">
+    <small><i class="fa-solid fa-flag-checkered"></i> FINAL BUDGET SUMMARY · 4 TRAVELLERS · 9 DAYS</small>
+    <b>≈ ₹62,000</b>
+    <small>≈ ₹15,500 per person · Munnar &amp; Wayanad Wonders · 03 July 2026</small>
+    <div style="margin-top:18px">
+      <a href="#home" class="btn" style="background:#04130d;color:var(--gold)"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="fbrand">Munnar &amp; Wayanad Wonders</div>
+  <p>Kerala Road Trip 2026 · 9 Days · 4 Travellers · From Hyderabad · Starting 03 July 2026</p>
+  <div class="foot-pills">
+    <span class="fp"><i class="fa-solid fa-sack-dollar"></i> ₹62k total</span>
+    <span class="fp"><i class="fa-solid fa-user"></i> ₹15.5k / head</span>
+    <span class="fp"><i class="fa-solid fa-leaf"></i> Budget &amp; Best</span>
+  </div>
+  <p style="margin-top:14px;font-size:12px;opacity:.7">Prices &amp; timings are 2025–26 estimates — verify on IRCTC / KSRTC / official sites before booking. Travel safe in the monsoon. 💚</p>
+  <div class="kerala-strip"></div>
+</footer>
+
+<!-- ============ FLOATING ACTION BUTTONS ============ -->
+<a class="fab" id="wa" href="https://wa.me/?text=Check%20out%20our%20Kerala%20Munnar%20%26%20Wayanad%202026%20trip%20plan!" target="_blank" rel="noopener" title="Share / Plan"><i class="fa-brands fa-whatsapp"></i></a>
+<button class="fab" id="top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+/* ============================================================
+   1. LOADER — hide after load
+   ============================================================ */
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('loader').classList.add('hide'),700);
+});
+
+/* ============================================================
+   2. RAIN GENERATOR (monsoon)
+   ============================================================ */
+(function makeRain(){
+  const r=document.getElementById('rain');
+  const count=window.innerWidth<600?45:90;
+  let html='';
+  for(let i=0;i<count;i++){
+    const left=Math.random()*100;
+    const dur=(0.6+Math.random()*0.9).toFixed(2);
+    const delay=(Math.random()*5).toFixed(2);
+    const h=(40+Math.random()*50).toFixed(0);
+    const op=(0.15+Math.random()*0.35).toFixed(2);
+    html+=`<span class="drop" style="left:${left}%;height:${h}px;opacity:${op};animation-duration:${dur}s;animation-delay:${delay}s"></span>`;
+  }
+  r.innerHTML=html;
+})();
+
+/* ============================================================
+   3. COUNTDOWN TIMER → 03 July 2026, 14:25
+   ============================================================ */
+const target=new Date('2026-07-03T14:25:00+05:30').getTime();
+function tick(){
+  const now=Date.now();let diff=target-now;
+  if(diff<0)diff=0;
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor(diff%86400000/3600000);
+  const m=Math.floor(diff%3600000/60000);
+  const s=Math.floor(diff%60000/1000);
+  const z=n=>String(n).padStart(2,'0');
+  document.getElementById('cd-d').textContent=z(d);
+  document.getElementById('cd-h').textContent=z(h);
+  document.getElementById('cd-m').textContent=z(m);
+  document.getElementById('cd-s').textContent=z(s);
+}
+tick();setInterval(tick,1000);
+
+/* ============================================================
+   4. NAV: scroll style + active link + smooth handled by CSS
+   ============================================================ */
+const nav=document.getElementById('nav');
+const links=[...document.querySelectorAll('.nav-links a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>40);
+  document.getElementById('top').classList.toggle('show',window.scrollY>500);
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur='#'+s.id;});
+  links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===cur));
+});
+
+/* ============================================================
+   5. SCROLL REVEAL (IntersectionObserver)
+   ============================================================ */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ============================================================
+   6. ANIMATED BUDGET COUNTERS
+   ============================================================ */
+const cio=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,to=+el.dataset.to;let cur=0;
+    const step=Math.max(1,Math.floor(to/60));
+    const run=()=>{cur+=step;if(cur>=to){el.textContent=to.toLocaleString('en-IN');}
+      else{el.textContent=cur.toLocaleString('en-IN');requestAnimationFrame(run);}};
+    run();cio.unobserve(el);
+  });
+},{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+
+/* ============================================================
+   7. TIMELINE accordions
+   ============================================================ */
+document.querySelectorAll('.tl-card').forEach(c=>{
+  c.querySelector('.tl-head').addEventListener('click',()=>c.classList.toggle('open'));
+});
+
+/* ============================================================
+   8. FAQ accordions
+   ============================================================ */
+document.querySelectorAll('.acc').forEach(a=>{
+  a.querySelector('.acc-h').addEventListener('click',()=>a.classList.toggle('open'));
+});
+
+/* ============================================================
+   9. PACKING checklist toggle
+   ============================================================ */
+document.querySelectorAll('.check').forEach(c=>{
+  c.addEventListener('click',()=>{
+    c.classList.toggle('done');
+    const i=c.querySelector('i');
+    i.className=c.classList.contains('done')?'fa-solid fa-square-check':'fa-regular fa-square';
+  });
+});
+
+/* ============================================================
+   10. THEME TOGGLE (dark/light, remembers)
+   ============================================================ */
+const tb=document.getElementById('themeBtn');
+function setTheme(t){
+  document.body.setAttribute('data-theme',t);
+  tb.innerHTML=t==='light'?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';
+  try{localStorage.setItem('kerala-theme',t);}catch(e){}
+}
+let saved='dark';try{saved=localStorage.getItem('kerala-theme')||'dark';}catch(e){}
+if(saved==='light')setTheme('light');
+tb.addEventListener('click',()=>setTheme(document.body.getAttribute('data-theme')==='light'?'dark':'light'));
+
+/* ============================================================
+   11. BACK TO TOP
+   ============================================================ */
+document.getElementById('top').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ============================================================
+   12. MUSIC toggle (visual equaliser — no external audio)
+   ============================================================ */
+const mBtn=document.getElementById('musicBtn'),mBox=document.getElementById('music');
+mBox.classList.add('paused');
+mBtn.addEventListener('click',()=>{
+  mBox.classList.toggle('paused');
+  const on=!mBox.classList.contains('paused');
+  mBtn.innerHTML=on?'<i class="fa-solid fa-pause"></i> &nbsp;Pause Beat':'<i class="fa-solid fa-play"></i> &nbsp;Toggle Beat';
+});
+</script>
 </body>
 </html>
